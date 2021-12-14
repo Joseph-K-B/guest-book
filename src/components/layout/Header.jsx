@@ -1,8 +1,10 @@
+import { useUser } from "../../context/UserCtx";
+
 const Header = () => {
-    // const {name} = user;
+    const {name} = useUser();
     return (
         <header>
-            <p>Welcome</p>
+            <p>Welcome <span>{name}</span></p>
         </header>
     )
 }
