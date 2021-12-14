@@ -31,23 +31,27 @@ const EntryForm = () => {
         </div>
     )
 
-    const loggedMsg = name ? `Welcome ${name}` : 'Sign in to proceed';
+    const loggedMsg = name ? `Signed as ${name}` : 'Sign here and leave a note';
 
     return (
 
         <>
-            <h1>{loggedMsg}</h1>
+            <h3>{loggedMsg}</h3>
             <form onSubmit={handleSubmit}>
-                {/* <nameSubmit /> */}
                 { name ? null : nameSubmit}
-                <input type='text' placeholder='note' value={guestNote} onChange={(e) => setGuestNote(e.target.value)} /> 
+                <input 
+                    type='text' 
+                    placeholder='note' 
+                    value={guestNote} 
+                    onChange={(e) => setGuestNote(e.target.value)} 
+                /> 
                 <button>Submit</button>
                 {name && (
                     <button onClick={() => {
                         setName('')
                         setUserName('')
                     }}>
-                        Not {name} ???
+                        Not {name}???
                     </button>
                 )}
             </form>
