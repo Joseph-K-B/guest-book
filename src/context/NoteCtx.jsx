@@ -2,10 +2,12 @@ import { createContext, useContext, useState } from "react";
 
 const NoteCtx = createContext();
 
-const NoteProvider = ({children}) => {
+const NoteProvider = ({ children }) => {
     const [notes, setNotes] = useState([]);
 
-    return <NoteCtx.Provider value={{ notes, setNotes }}>{children}</NoteCtx.Provider>
+    return (
+        <NoteCtx.Provider value={{ notes, setNotes }}>{children}</NoteCtx.Provider>
+    )
 }
 
 const useNote = () => {

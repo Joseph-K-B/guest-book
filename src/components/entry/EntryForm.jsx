@@ -20,6 +20,17 @@ const EntryForm = () => {
         updateGuest();
     };
 
+    const nameSubmit = (
+        <div>   
+            <input 
+                type='text' 
+                placeholder='name' 
+                value={userName} 
+                onChange={(e) => setUserName(e.target.value)} 
+            />
+        </div>
+    )
+
     const loggedMsg = name ? `Welcome ${name}` : 'Sign in to proceed';
 
     return (
@@ -27,7 +38,8 @@ const EntryForm = () => {
         <>
             <h1>{loggedMsg}</h1>
             <form onSubmit={handleSubmit}>
-                <input type='text' placeholder='name' value={userName} onChange={(e) => setUserName(e.target.value)} />
+                {/* <nameSubmit /> */}
+                { name ? null : nameSubmit}
                 <input type='text' placeholder='note' value={guestNote} onChange={(e) => setGuestNote(e.target.value)} /> 
                 <button>Submit</button>
             </form>
