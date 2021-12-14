@@ -1,17 +1,34 @@
+import { useState } from "react";
+import { useNote } from "../../context/NoteCtx";
 import { useUser } from "../../context/UserCtx";
-const { useState } = require("react");
 
 const EntryForm = () => {
-    // const [name, setName] = useState();
-    // const [note, setNote] = useState();
+    const [userName, setUserName] = useState('');
+    const [guestNote, setGuestNote] = useState('');
     const { name, setName } = useUser();
-    const { note, setNote } = useUser();
+    const { notes, setNotes } = useNote();
+
+    const updateGuest = () => {
+        if (!guestNote) return;
+        setName(userName);
+        setNotes([...notes, {userName, message: guestNote}]);
+        setGuestNote('');
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        updateGuest();
+    };
 
     return (
-        <form>
-            <input type='text' placeholder='name' value={name}></input>
-            <input type='text' placeholder='note' value={note}></input>
-        </form>
+
+        <>
+            <form onSubmit={handleSubmit}>
+                <input type='text' placeholder='name' value={userName} onChange={(e) => setUserName(e.target.value)} />
+                <input type='text' placeholder='note' value={guestNote} onChange={(e) => setGuestNote(e.target.value)} /> 
+                <button>Submit</button>
+            </form>
+        </>
     )
 }
 

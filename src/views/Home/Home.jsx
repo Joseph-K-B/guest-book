@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { EntryForm } from "../../components/entry/EntryForm";
-import { NoteProvider } from "../../context/EntryCtx";
+import { NoteProvider } from "../../context/NoteCtx";
 
 
 const Home = () => {
