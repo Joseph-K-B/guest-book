@@ -1,18 +1,18 @@
-import { createContext } from "react"
+import { createContext, useContext, useState } from "react"
 
 const UserCtx = createContext();
 
 const UserProvider = ({children}) => {
-    const [user, setUser] = useState({})
+    const [name, setName] = useState('');
 
-    return <UserCtx.Provider value={{ user, setUser }}>{children}</UserCtx.Provider>
+    return <UserCtx.Provider value={{ name, setName }}>{children}</UserCtx.Provider>
 }
 
 const useUser = () => {
     const ctx = useContext(UserCtx);
 
     if(ctx === undefined) {
-        throw Error('useUser custom hook must be called within child components of UserCtx Provider');
+        throw new Error('useUser custom hook must be called within child components of UserCtx Provider');
     }
     return ctx;
 }
