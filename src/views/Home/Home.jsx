@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { EntryForm } from "../../components/entry/EntryForm";
+import NoteList from "../../components/notes/NoteList";
 import { NoteProvider } from "../../context/NoteCtx";
 
 
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <NoteProvider>
             <EntryForm />
+            <NoteList />
         </NoteProvider>
     )
 }
