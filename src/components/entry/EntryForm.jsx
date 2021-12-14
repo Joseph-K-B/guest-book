@@ -20,9 +20,12 @@ const EntryForm = () => {
         updateGuest();
     };
 
+    const loggedMsg = name ? `Welcome ${name}` : 'Sign in to proceed';
+
     return (
 
         <>
+            <h1>{loggedMsg}</h1>
             <form onSubmit={handleSubmit}>
                 <input type='text' placeholder='name' value={userName} onChange={(e) => setUserName(e.target.value)} />
                 <input type='text' placeholder='note' value={guestNote} onChange={(e) => setGuestNote(e.target.value)} /> 
