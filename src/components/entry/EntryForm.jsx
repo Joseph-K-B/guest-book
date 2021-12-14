@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react";
 import { useNote } from "../../context/NoteCtx";
 import { useUser } from "../../context/UserCtx";
@@ -24,7 +25,8 @@ const EntryForm = () => {
         <div>   
             <input 
                 type='text' 
-                placeholder='name' 
+                placeholder='name'
+                aria-label='name-input' 
                 value={userName} 
                 onChange={(e) => setUserName(e.target.value)} 
             />
@@ -41,7 +43,8 @@ const EntryForm = () => {
                 { name ? null : nameSubmit}
                 <input 
                     type='text' 
-                    placeholder='note' 
+                    placeholder='note'
+                    aria-label='note-input' 
                     value={guestNote} 
                     onChange={(e) => setGuestNote(e.target.value)} 
                 /> 

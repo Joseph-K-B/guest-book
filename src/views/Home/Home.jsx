@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from "react"
 import { EntryForm } from "../../components/entry/EntryForm";
 import NoteList from "../../components/notes/NoteList";
