@@ -42,6 +42,14 @@ const EntryForm = () => {
                 { name ? null : nameSubmit}
                 <input type='text' placeholder='note' value={guestNote} onChange={(e) => setGuestNote(e.target.value)} /> 
                 <button>Submit</button>
+                {name && (
+                    <button onClick={() => {
+                        setName('')
+                        setUserName('')
+                    }}>
+                        Not {name} ???
+                    </button>
+                )}
             </form>
         </>
     )
