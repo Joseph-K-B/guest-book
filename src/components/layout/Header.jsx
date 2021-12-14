@@ -4,7 +4,11 @@ const Header = () => {
     const {name} = useUser();
     return (
         <header>
-            <p>Welcome <span>{name}</span></p>
+            {name ? (
+                <p>Welcome {name}</p>
+            ) : (
+                <p>Please register to proceed</p>
+            )}
         </header>
     )
 }

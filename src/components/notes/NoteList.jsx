@@ -8,7 +8,7 @@ function NoteList() {
         <ul>
             {notes.map((note) => {
                 return (
-                    <li>
+                    <li key={`${note.message}`}>
                         <Note note={note} />
                     </li>
                 )
