@@ -2,7 +2,7 @@ import { UserProvider } from "./context/UserCtx";
 import Home from "./views/Home/Home";
 import Layout from './views/Layout/Layout';
 
-export default function App() {
+function App() {
   return (
     <UserProvider>
       <Layout>
@@ -10,5 +10,6 @@ export default function App() {
       </Layout>
     </UserProvider>
   )
-}
+};
 
+export default App;

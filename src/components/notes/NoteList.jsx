@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNote } from "../../context/NoteCtx";
 import Note from "./Note";
 

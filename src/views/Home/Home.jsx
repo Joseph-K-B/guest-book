@@ -7,7 +7,7 @@ import { useUser } from "../../context/UserCtx";
 
 const Home = () => {
     // const [loading, setLoading] = useState(true);
-    const { name } = useUser();
+    // const { name } = useUser();
 
     // if(!name) return <h1>Loading...</h1>
     return (
