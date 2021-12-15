@@ -8,8 +8,8 @@ const NoteProvider = ({ children }) => {
 
     return (
         <NoteCtx.Provider value={{ notes, setNotes }}>{children}</NoteCtx.Provider>
-    )
-}
+    );
+};
 
 const useNote = () => {
     const ctx = useContext(NoteCtx);
@@ -18,6 +18,6 @@ const useNote = () => {
         throw new Error('useNote hook can only be called within child components of NoteCtx Provider');
     }
     return ctx;
-}
+};
 
-export { NoteProvider, useNote}
+export { NoteProvider, useNote };

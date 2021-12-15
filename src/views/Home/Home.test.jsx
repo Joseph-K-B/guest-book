@@ -5,7 +5,7 @@ import { UserProvider } from '../../context/UserCtx';
 import userEvent from '@testing-library/user-event';
 import Home from './Home';
 
-it('renders Home component and allows user to input name & message', async () => {
+it('renders Home component and allows user to input name & message', () => {
     render(
         <UserProvider>
             <NoteProvider>
@@ -24,7 +24,7 @@ it('renders Home component and allows user to input name & message', async () =>
     userEvent.type(msgInput, 'Loves food');
     userEvent.click(submitBtn);
 
-    const newNote = await screen.findByRole('list-item');
+    const newNote =  screen.getByRole('list-item');
 
     expect(msgInput).toBeInTheDocument();
     expect(submitBtn).toBeInTheDocument();

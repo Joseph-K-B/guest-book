@@ -31,7 +31,7 @@ const EntryForm = () => {
                 onChange={(e) => setUserName(e.target.value)} 
             />
         </div>
-    )
+    );
 
     const loggedMsg = name ? `Signed as ${name}` : 'Sign here and leave a note';
 
@@ -59,7 +59,7 @@ const EntryForm = () => {
                 )}
             </form>
         </>
-    )
-}
+    );
+};
 
 export { EntryForm }
