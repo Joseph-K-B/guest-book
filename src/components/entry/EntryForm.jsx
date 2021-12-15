@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useNote } from "../../context/NoteCtx";
 import { useUser } from "../../context/UserCtx";
+import css from '../../components/entry/EntryForm.css';
 
 const EntryForm = () => {
     const [userName, setUserName] = useState('');
@@ -36,7 +37,6 @@ const EntryForm = () => {
     const loggedMsg = name ? `Signed as ${name}` : 'Sign here and leave a note';
 
     return (
-
         <>
             <h3>{loggedMsg}</h3>
             <form onSubmit={handleSubmit}>
@@ -48,11 +48,13 @@ const EntryForm = () => {
                     value={guestNote} 
                     onChange={(e) => setGuestNote(e.target.value)} 
                 /> 
-                <button>Submit</button>
+                <button className={css.submitBtn}>Submit</button>
                 {name && (
-                    <button onClick={() => {
-                        setName('')
-                        setUserName('')
+                    <button
+                        className={css.logOutBtn} 
+                        onClick={() => {
+                            setName('')
+                            setUserName('')
                     }}>
                         Not {name}???
                     </button>

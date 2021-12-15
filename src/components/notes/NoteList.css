@@ -1,5 +1,17 @@
-.notes{
+.notes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.noteItem {
+    min-width: 7rem;
+    /* min-height: 6rem; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: green;
+    border: black solid 0.25rem;
+    margin: 3%;
 }

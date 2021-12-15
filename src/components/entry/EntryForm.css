@@ -1,0 +1,21 @@
+.submitBtn {
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.submitBtn:hover {
+    color: black;
+    background-color: green;
+    border: 0.15rem solid black;
+}
+
+.logOutBtn {
+    border: none;
+    background-color: white;
+    color: black;
+}
+
+.logOutBtn:hover {
+    color: red;
+}
