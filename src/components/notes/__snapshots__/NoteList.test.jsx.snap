@@ -2,6 +2,10 @@
 
 exports[`renders list of notes left by users 1`] = `
 <div>
-  <ul />
+  <section>
+    <ul
+      class="notes"
+    />
+  </section>
 </div>
 `;

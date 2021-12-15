@@ -11,7 +11,7 @@ function NoteList() {
       <ul className={css.notes}>
         {notes.map((note) => {
           return (
-          <div className={css.note}>
+          <div className={css.note} key={`${note.message}`}>
             <li 
               key={`${note.message}`} 
               role='list-item' 

@@ -14,11 +14,14 @@
 .noteItem {
     position: relative;
     right: 1.25rem;
-    min-width: 7rem;
+    min-width: 7.25rem;
+    max-height: 7.25rem;
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: green;
+    color: #F8F9FA;
+    background-color: #607466;
     border: black solid 0.25rem;
     margin: 5%;
+    box-shadow: 0.15rem 0.15rem black;
 }

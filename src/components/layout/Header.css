@@ -1,9 +1,15 @@
 .head {
+    color: #ADB5BD;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 5rem;
     width: 100%;
-    background-color: rgb(56, 56, 92);
+    background-color: #212529;
 }
 
 .welcomeMsg {
-    color: green;
+    color: #607466;
+    /* color: green; */
+    margin: 2.5%;
 }

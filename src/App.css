@@ -1,3 +1,15 @@
-html {
-    background-color: gray;
+body {
+    background-color: #212529;
+}
+
+main {
+    min-height: 30rem;
+    background-color: #343A40;
+}
+
+footer {
+    min-height: 5rem;
+    background-color: #212529;
+    text-align: center;
+    color: white;
 }

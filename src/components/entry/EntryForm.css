@@ -15,8 +15,9 @@ form {
 
 .submitBtn {
     border: none;
-    background-color: gray;
-    color: black;
+    background-color: #343A40;
+    color: white;
+    margin: 3%;
 }
 
 .submitBtn:hover {
@@ -27,8 +28,8 @@ form {
 
 .logOutBtn {
     border: none;
-    background-color: gray;
-    color: black;
+    background-color: #343A40;
+    color: white;
 }
 
 .logOutBtn:hover {
