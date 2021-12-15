@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useNote } from "../../context/NoteCtx";
 import { useUser } from "../../context/UserCtx";
-import css from '../../components/entry/EntryForm.css';
+import css from './EntryForm.css';
 
 const EntryForm = () => {
     const [userName, setUserName] = useState('');
@@ -38,28 +38,30 @@ const EntryForm = () => {
 
     return (
         <>
-            <h3>{loggedMsg}</h3>
-            <form onSubmit={handleSubmit}>
-                { name ? null : nameSubmit}
-                <input 
-                    type='text' 
-                    placeholder='note'
-                    aria-label='note-input' 
-                    value={guestNote} 
-                    onChange={(e) => setGuestNote(e.target.value)} 
-                /> 
-                <button className={css.submitBtn}>Submit</button>
-                {name && (
-                    <button
-                        className={css.logOutBtn} 
-                        onClick={() => {
-                            setName('')
-                            setUserName('')
-                    }}>
-                        Not {name}???
-                    </button>
-                )}
-            </form>
+            <section className={css.formSection}>
+              <h3>{loggedMsg}</h3>
+              <form onSubmit={handleSubmit}>
+                  { name ? null : nameSubmit}
+                  <input 
+                      type='text' 
+                      placeholder='note'
+                      aria-label='note-input' 
+                      value={guestNote} 
+                      onChange={(e) => setGuestNote(e.target.value)} 
+                  /> 
+                  <button className={css.submitBtn}>Submit</button>
+                  {name && (
+                      <button
+                          className={css.logOutBtn} 
+                          onClick={() => {
+                              setName('')
+                              setUserName('')
+                      }}>
+                          Not {name}???
+                      </button>
+                  )}
+              </form>
+            </section>
         </>
     );
 };

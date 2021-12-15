@@ -3,3 +3,7 @@
     width: 100%;
     background-color: rgb(56, 56, 92);
 }
+
+.welcomeMsg {
+    color: green;
+}

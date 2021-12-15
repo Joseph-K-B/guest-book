@@ -1,6 +1,8 @@
+import css from './Footer.css'
+
 const Footer = () => {
     return(
-        <footer>
+        <footer className={css.foot}>
             <p>This is a footer</p>
         </footer>
     )

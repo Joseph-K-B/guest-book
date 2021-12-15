@@ -1,14 +1,14 @@
 import { useUser } from "../../context/UserCtx";
-import css from '../../components/layout/Header.css'
+import css from './Header.css'
 
 const Header = () => {
     const {name} = useUser();
     return (
         <header className={css.head}>
             {name ? (
-                <p>Welcome {name}</p>
+                <h2 className={css.welcomeMsg}>Welcome {name}</h2>
             ) : (
-                <p>Register to proceed</p>
+                <h2 className={css.welcomeMsg}>Register to proceed</h2>
             )}
         </header>
     )

@@ -1,6 +1,21 @@
+.formSection {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 15rem;
+    border: 0.25rem solid black;
+}
+
 .submitBtn {
     border: none;
-    background-color: white;
+    background-color: gray;
     color: black;
 }
 
@@ -12,7 +27,7 @@
 
 .logOutBtn {
     border: none;
-    background-color: white;
+    background-color: gray;
     color: black;
 }
 
