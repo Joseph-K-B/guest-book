@@ -23,5 +23,6 @@
     background-color: #607466;
     border: black solid 0.25rem;
     margin: 5%;
-    box-shadow: 0.15rem 0.15rem black;
+    box-shadow: 0.115rem 0.115rem black;
+    border-radius: 10px;
 }

@@ -39,7 +39,7 @@ const EntryForm = () => {
     return (
         <>
             <section className={css.formSection}>
-              <h3>{loggedMsg}</h3>
+              <h3 className={css.formHead}>{loggedMsg}</h3>
               <form onSubmit={handleSubmit}>
                   { name ? null : nameSubmit}
                   <input 

@@ -9,21 +9,49 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+    min-height: 12.5rem;
     max-width: 15rem;
     border: 0.25rem solid black;
+    border-radius: 10px;
+}
+
+input {
+    width: 85%;
+    text-align: center;
+    padding: 0.25rem;
+    margin: 0.1rem;
+    border: 0;
+    border-bottom: 0.2rem solid black;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #6C757D;
+    color: #DEE2E6;
+}
+
+::placeholder {
+    color: #DEE2E6;
+}
+
+.formHead{
+    color: #F8F9FA;
 }
 
 .submitBtn {
     border: none;
     background-color: #343A40;
     color: white;
-    margin: 3%;
+    margin: 1%;
+    height: 2rem;
 }
 
 .submitBtn:hover {
-    color: black;
-    background-color: green;
+    color: #F8F9FA;
+    background-color: #607466;
     border: 0.15rem solid black;
+    box-shadow: 0.115rem 0.115rem black;
+    border-radius: 10px;
 }
 
 .logOutBtn {
