@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders list of notes left by users 1`] = `
+<div>
+  <section>
+    <ul
+      class="notes"
+    />
+  </section>
+</div>
+`;
