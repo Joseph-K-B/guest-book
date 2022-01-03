@@ -1,22 +1,24 @@
-import React from 'react';
-import { useState } from "react"
-import { EntryForm } from "../../components/entry/EntryForm";
-import NoteList from "../../components/notes/NoteList";
-import { NoteProvider } from "../../context/NoteCtx";
-import { useUser } from "../../context/UserCtx";
+import { useNavigate } from 'react-router-dom'
 
 
-const Home = () => {
-    // const [loading, setLoading] = useState(true);
-    // const { name } = useUser();
+function Home() {
+  const navigate = useNavigate();
 
-    // if(!name) return <h1>Loading...</h1>
-    return (
-        <NoteProvider>
-            <EntryForm />
-            <NoteList />
-        </NoteProvider>
-    )
+  const handleClick = () => {
+    navigate('/login');
+  }
+
+  return (
+    <>
+      <h1>Welcome!</h1>
+      <img src='' alt='the lovely couple'/>
+      <p>
+        Thank you for joining us on this day as we join these two in holy matrimony
+        Please register to log in and leave some kind words of encouragment.
+      </p>
+      <button onClick={() => handleClick()}>Log In</button>
+    </>
+  )
 }
 
-export default Home
+export default Home;
