@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Note({note: {userName, message} }) {
+function Note({note: {user, message} }) {
     return(
-        <><h2>{userName}</h2><p>{message}</p></>
+        <><h2>{user.username}</h2><p>{message}</p></>
     )
 }
 

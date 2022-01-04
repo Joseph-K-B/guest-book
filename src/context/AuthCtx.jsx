@@ -1,17 +1,21 @@
 import { createContext, useState } from "react"
 
-
 const authCtx = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const login = (email, password) => {
+  // This would probably be the sign up function 
+  // b/c it includes both username and email
+  // 
+  const login = (username, email, password) => {
     const authConfirmed = (
+      username === process.env.AUTH_USER &&
       email === process.env.AUTH_EMAIL &&
       password === process.env.AUTH_PASSWORD
       )
-      if(authConfirmed) setUser({ email });
+      if(authConfirmed) 
+        setUser({ username, email });
       return authConfirmed;
   };
 
@@ -21,7 +25,7 @@ const AuthProvider = ({ children }) => {
   }
 
   return (
-    <authCtx.Provider value={{user, login, logout}}>
+    <authCtx.Provider value={{user, setUser, login, logout}}>
       {children}
     </authCtx.Provider>
   );

@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 
 const UserCtx = createContext();
 
-const UserProvider = ({children}) => {
+const UserProvider = ({ children }) => {
     const [name, setName] = useState('');
     
     return <UserCtx.Provider value={{ name, setName }}>{children}</UserCtx.Provider>

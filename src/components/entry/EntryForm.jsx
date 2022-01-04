@@ -1,47 +1,38 @@
 import React from 'react';
-import { useState } from "react";
 import { useNote } from "../../context/NoteCtx";
-import { useUser } from "../../context/UserCtx";
+import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import { useState } from "react";
 import css from './EntryForm.css';
 
 const EntryForm = () => {
-    const [userName, setUserName] = useState('');
     const [guestNote, setGuestNote] = useState('');
-    const { name, setName } = useUser();
+    const navigate = useNavigate();
     const { notes, setNotes } = useNote();
+    const {user, logout} = useAuth();
 
     const updateGuest = () => {
         if (!guestNote) return;
-        setName(userName);
-        setNotes([...notes, {userName, message: guestNote}]);
+        setNotes([...notes, {user, message: guestNote}]);
         setGuestNote('');
     };
+
+    const handleNotUser = () => {
+        logout(() => navigate('/'))
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         updateGuest();
     };
 
-    const nameSubmit = (
-        <div>   
-            <input 
-                type='text' 
-                placeholder='name'
-                aria-label='name-input' 
-                value={userName} 
-                onChange={(e) => setUserName(e.target.value)} 
-            />
-        </div>
-    );
-
-    const loggedMsg = name ? `Signed as ${name}` : 'Sign here and leave a note';
+    const loggedMsg = user ? `Signed as ${user.username}` : 'Sign here and leave a note';
 
     return (
         <>
             <section className={css.formSection}>
               <h3 className={css.formHead}>{loggedMsg}</h3>
               <form onSubmit={handleSubmit}>
-                  { name ? null : nameSubmit}
                   <input 
                       type='text' 
                       placeholder='note'
@@ -50,14 +41,11 @@ const EntryForm = () => {
                       onChange={(e) => setGuestNote(e.target.value)} 
                   /> 
                   <button className={css.submitBtn}>Submit</button>
-                  {name && (
+                  {user && (
                       <button
                           className={css.logOutBtn} 
-                          onClick={() => {
-                              setName('')
-                              setUserName('')
-                      }}>
-                          Not {name}???
+                          onClick={() => handleNotUser()}>
+                          Not {user.username}???
                       </button>
                   )}
               </form>
