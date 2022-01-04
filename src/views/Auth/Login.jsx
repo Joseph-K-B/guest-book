@@ -26,7 +26,7 @@ function Login() {
   };
 
   const handleHelp = () => {
-    navigate('./help');
+    navigate('/help');
   }
 
   return (

@@ -3,6 +3,9 @@ import Header from '../../components/layout/Header'
 import css from './Layout.css';
 
 const Layout = ({ children }) => {
+
+    console.log(children);
+    
     return (
         <div>
             <Header/>
