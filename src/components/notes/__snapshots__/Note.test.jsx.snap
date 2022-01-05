@@ -2,9 +2,11 @@
 
 exports[`renders a note and user ctx 1`] = `
 <div>
-  <h2>
+  <h4
+    class="noteTitle"
+  >
     Izzie the Dog
-  </h2>
+  </h4>
   <p>
     words here
   </p>
