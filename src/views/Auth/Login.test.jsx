@@ -13,6 +13,6 @@ it('renders log in form and does other cool shit too', () => {
     </AuthProvider>
   );
 
-  expect(4 + 3).toEqual(7);
+  expect(5 + 3).toEqual(8);
   expect(container).toMatchSnapshot();
 })
