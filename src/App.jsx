@@ -7,6 +7,7 @@ import GuestBook from "./views/GuestBook/GuestBook";
 import Login from "./views/Auth/Login";
 import { AuthProvider } from "./context/AuthCtx";
 import PrivateRoute from "./components/privy/PrivateRoute";
+import Help from "./views/Help/Help";
 
 function App() {  
   return (
@@ -16,11 +17,16 @@ function App() {
           <Router>      
             <Layout className={css.layout}> 
               <Routes>
-                <Route exact path='/' element={<Home />} />
+                <Route exact path='/home' element={<Home />} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/help' element={<Help />} />
                 <Route 
-                  path='/guestbook/*' 
-                  element={<PrivateRoute component={GuestBook} />} 
+                  path='/' 
+                  element={
+                    <PrivateRoute>
+                      <GuestBook />
+                    </PrivateRoute>
+                  } 
                 />
               </Routes>
             </Layout>            

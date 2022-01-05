@@ -8,18 +8,18 @@ import css from './Login.css';
 function Login() {
   const {formState, handleFormChange} = useForm({ username: '', email: '', password: ''});
   const [error, setError] = useState(null);
+  // react-router-dom v5
+  // const history = useHistory();
   const navigate = useNavigate();
-  const location = useLocation();
   const auth = useAuth();
-
-  const { from } = location.state || {from : {pathname: '/'}};
 
   const handleLogin = (e) => {
     e.preventDefault();
     const confirmedAuth = auth.login(formState.username, formState.email, formState.password);
 
     if(confirmedAuth) {
-      navigate('/guestbook');
+      //history
+      navigate('/', {replace: true});
     } else {
       setError('Invalid credentials, form is case sensitive')
     }
