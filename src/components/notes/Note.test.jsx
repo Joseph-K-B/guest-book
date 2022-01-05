@@ -6,7 +6,7 @@ import { authCtx, AuthProvider } from '../../context/AuthCtx';
 
 jest.mock('../../context/AuthCtx'), () => ({
   __esModue: true,
-  default: React.createContext()
+  default: createContext()
 })
 
 const user = {
@@ -18,14 +18,11 @@ const user = {
 it('renders a note left by user', async () => {
     const {container} = render(
     <AuthProvider>
-    <authCtx.Provider value={{user}}>      
-      <NoteProvider>
-        <Note
-          user = {{user}}      
-          note = {{ message: 'words here'}} 
-        />
-      </NoteProvider>
-    </authCtx.Provider>
+      <authCtx.Provider value={{user}}>      
+        <NoteProvider>
+          <Note note = {{ message: 'words here'}} />
+        </NoteProvider>
+      </authCtx.Provider>
     </AuthProvider>
   );
 
