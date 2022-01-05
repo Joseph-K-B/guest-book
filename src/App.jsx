@@ -1,4 +1,4 @@
-require ('dotenv').config();
+// require ('dotenv').config();
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import Home from "./views/Home/Home";
 import Layout from './views/Layout/Layout';
