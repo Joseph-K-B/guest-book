@@ -1,4 +1,3 @@
-import { UserProvider } from "./context/UserCtx";
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import Home from "./views/Home/Home";
 import Layout from './views/Layout/Layout';
@@ -13,25 +12,23 @@ function App() {
   return (
     <>
     <AuthProvider>
-      {/* <UserProvider> */}
-          <Router>      
-            <Layout className={css.layout}> 
-              <Routes>
-                <Route exact path='/home' element={<Home />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/help' element={<Help />} />
-                <Route 
-                  path='/' 
-                  element={
-                    <PrivateRoute>
-                      <GuestBook />
-                    </PrivateRoute>
-                  } 
-                />
-              </Routes>
-            </Layout>            
-          </Router>
-      {/* </UserProvider> */}
+      <Router>      
+        <Layout className={css.layout}> 
+          <Routes>
+            <Route exact path='/home' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/help' element={<Help />} />
+            <Route 
+              path='/' 
+              element={
+                <PrivateRoute>
+                  <GuestBook />
+                </PrivateRoute>
+              } 
+            />
+          </Routes>
+        </Layout>            
+      </Router>
     </AuthProvider>
     </>
   )

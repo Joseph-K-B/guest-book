@@ -1,32 +1,28 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
+import { screen, render, findByAltText, findByText, findByLabelText } from '@testing-library/react';
 import { NoteProvider } from '../../context/NoteCtx';
-import { UserProvider } from '../../context/UserCtx';
 import userEvent from '@testing-library/user-event';
 import Home from './Home';
+import { AuthProvider } from '../../context/AuthCtx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-it('renders Home component and allows user to input name & message', () => {
-    render(
-        <UserProvider>
-            <NoteProvider>
-                <Home/>
-            </NoteProvider>
-        </UserProvider>
-    );
+it('renders Home component', () => {
+  const container = render(
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route component={Home} />
+        </Routes>
+      </Router>
+    </AuthProvider>
+  );
 
-    const nameInput = screen.getByLabelText('name-input');
-    const msgInput = screen.getByLabelText('note-input');
-    const submitBtn = screen.getByRole('button');
-    
-    expect(nameInput).toBeInTheDocument();
-    
-    userEvent.type(nameInput, 'Izzie');
-    userEvent.type(msgInput, 'Loves food');
-    userEvent.click(submitBtn);
+  // const img = findByLabelText(/the lovely couple/i)
+  // const msg = findByText(
+  //   `Thank you for joining us on this day as we join these two in holy matrimony. 
+  //   Please register to log in and leave some kind words of encouragment.`)
 
-    const newNote =  screen.getByRole('list-item');
-
-    expect(msgInput).toBeInTheDocument();
-    expect(submitBtn).toBeInTheDocument();
-    expect(newNote).toBeInTheDocument();
+  // expect(img).toBeInTheDocument();
+  // expect(msg).toBeInTheDocument();
+  expect(container).toMatchSnapshot();
 });

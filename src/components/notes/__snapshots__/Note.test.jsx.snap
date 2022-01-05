@@ -3,8 +3,10 @@
 exports[`renders a note left by user 1`] = `
 <div>
   <h2>
-    Izzie
+    Izzie the Dog
   </h2>
-  <p />
+  <p>
+    words here
+  </p>
 </div>
 `;

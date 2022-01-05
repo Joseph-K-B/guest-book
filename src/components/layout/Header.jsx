@@ -11,7 +11,7 @@ const Header = () => {
     <header className={css.head}>
       <h1>Guestbook</h1>
       <nav>
-        <NavLink to='/'>
+        <NavLink to='/home'>
           <p className={css.random}>Country Roads</p>
         </NavLink>
       </nav>

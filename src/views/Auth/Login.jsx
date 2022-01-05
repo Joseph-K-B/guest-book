@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useForm from "../../hooks/useForm";
 import css from './Login.css';
@@ -8,17 +8,17 @@ import css from './Login.css';
 function Login() {
   const {formState, handleFormChange} = useForm({ username: '', email: '', password: ''});
   const [error, setError] = useState(null);
+  const auth = useAuth();
   // react-router-dom v5
   // const history = useHistory();
   const navigate = useNavigate();
-  const auth = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
     const confirmedAuth = auth.login(formState.username, formState.email, formState.password);
 
     if(confirmedAuth) {
-      //history
+      //history.replace('/')
       navigate('/', {replace: true});
     } else {
       setError('Invalid credentials, form is case sensitive')
@@ -26,6 +26,7 @@ function Login() {
   };
 
   const handleHelp = () => {
+    //history.push('/help')
     navigate('/help');
   }
 

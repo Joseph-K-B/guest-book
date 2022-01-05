@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { screen, render } from '@testing-library/react';
 import { NoteProvider } from '../../context/NoteCtx';
 import Note from './Note';
+import { authCtx, AuthProvider } from '../../context/AuthCtx';
+
+jest.mock('../../context/AuthCtx'), () => ({
+  __esModue: true,
+  default: React.createContext()
+})
+
+const user = {
+  username: 'Izzie the Dog',
+  email: 'izzie@dog.com',
+}
+
 
 it('renders a note left by user', async () => {
     const {container} = render(
-        <NoteProvider>
-            <Note note = {{
-                userName: 'Izzie',
-                note: 'i love bones'
-            }} />
-        </NoteProvider>
-    );
+    <AuthProvider>
+    <authCtx.Provider value={{user}}>      
+      <NoteProvider>
+        <Note
+          user = {{user}}      
+          note = {{ message: 'words here'}} 
+        />
+      </NoteProvider>
+    </authCtx.Provider>
+    </AuthProvider>
+  );
 
-    const guestName = screen.getByText(/Izzie/i);
+    const guestName = screen.getByText(/Izzie the Dog/i);
     expect(guestName).toBeInTheDocument();
     expect(container).toMatchSnapshot();
 });

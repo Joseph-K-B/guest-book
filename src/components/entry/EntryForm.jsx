@@ -26,7 +26,7 @@ const EntryForm = () => {
         updateGuest();
     };
 
-    const loggedMsg = user ? `Signed as ${user.username}` : 'Sign here and leave a note';
+    const loggedMsg = user ? `Signed in as ${user.username}` : 'Sign here and leave a note';
 
     return (
         <>
