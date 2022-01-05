@@ -15,7 +15,7 @@ const user = {
 }
 
 
-it('renders a note left by user', async () => {
+it('renders a note and user ctx', async () => {
     const {container} = render(
     <AuthProvider>
       <authCtx.Provider value={{user}}>      

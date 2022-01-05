@@ -1,5 +1,4 @@
-import React from 'react';
-import { createContext, useState } from "react"
+import React, { createContext, useState } from "react"
 
 const authCtx = createContext();
 
@@ -22,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = (cb) => {
     setUser(null);
-    cb();
+    // cb();
   }
 
   return (

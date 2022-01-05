@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthCtx";
 import PrivateRoute from "./components/privy/PrivateRoute";
 import Help from "./views/Help/Help";
 
-function App() {  
+function App() {
   return (
     <>
     <AuthProvider>
