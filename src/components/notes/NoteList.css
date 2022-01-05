@@ -11,10 +11,17 @@
     align-items: center;
 }
 
+.noteTitle {
+    max-width: 10rem;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
 .noteItem {
     position: relative;
     right: 1.0rem;
     min-width: 7.25rem;
+    min-height: 7.25rem;
     max-width: 10.25rem;
     display: inline-flex;
     flex-direction: column;
@@ -26,3 +33,4 @@
     box-shadow: 0.115rem 0.115rem black;
     border-radius: 10px;
 }
+

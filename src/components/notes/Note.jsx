@@ -1,10 +1,11 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
+import css from './NoteList.css';
 
 function Note({ note: {message} }) {
     const {user} = useAuth();
     return(
-        <><h2>{user.username}</h2><p>{message}</p></>
+        <><h4 className={css.noteTitle}>{user.username}</h4><p>{message}</p></>
     )
 }
 
