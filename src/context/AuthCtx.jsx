@@ -10,9 +10,9 @@ const AuthProvider = ({ children }) => {
   // 
   const login = (username, email, password) => {
     const authConfirmed = (
-      username === process.env.AUTH_USER &&
-      email === process.env.AUTH_EMAIL &&
-      password === process.env.AUTH_PASSWORD
+      username === process.env.REACT_APP_AUTH_USER &&
+      email === process.env.REACT_APP_AUTH_EMAIL &&
+      password === process.env.REACT_APP_AUTH_PASSWORD
       )
       if(authConfirmed) 
         setUser({ username, email });

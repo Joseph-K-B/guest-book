@@ -7,7 +7,7 @@ import { authCtx, AuthProvider } from '../../context/AuthCtx';
 jest.mock('../../context/AuthCtx'), () => ({
   __esModue: true,
   default: createContext()
-})
+ })
 
 const user = {
   username: 'Izzie the Dog',
