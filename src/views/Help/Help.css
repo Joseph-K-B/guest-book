@@ -1,0 +1,24 @@
+.helpSect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 7%;
+  /* max-width: 40rem; */
+}
+
+.helpTitle {
+  max-width: 20rem;
+  margin: 5%;
+}
+
+.tryAgain {
+  color: red;
+  text-decoration: none;
+}
+
+.tryAgain:hover {
+  color: green;
+}

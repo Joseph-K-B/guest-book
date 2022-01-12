@@ -1,0 +1,37 @@
+.mainSect {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-items: center;
+  align-items: center;
+}
+
+.homeImg {
+  max-height: 20rem;
+  max-width: 20rem;
+}
+
+.introDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 7%;
+  align-items: center;
+  text-align: center;
+  max-height: 30rem;
+  max-width: 15rem;
+  color: white;
+  border: white solid 0.5rem;
+}
+
+
+@media (min-width: 700px) {
+  .mainSect {
+    display: grid;
+    grid-template-columns: 1fr 1.75fr;  
+  }
+  .homeImg {
+    max-height: 70vh;
+    margin: 10%;
+  }
+}
+
+

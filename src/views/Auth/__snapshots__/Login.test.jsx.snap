@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders log in form and does other cool shit too 1`] = `
+<div>
+  <section
+    class="formSection"
+  >
+    <h3>
+      Register here
+    </h3>
+    <form
+      class="logForm"
+    >
+      <label
+        for="username"
+      >
+        Name:
+      </label>
+      <input
+        id="username"
+        name="username"
+        type="username"
+        value=""
+      />
+      <label
+        for="email"
+      >
+        Email:
+      </label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        value=""
+      />
+      <label
+        for="password"
+      >
+        Password:
+      </label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        value=""
+      />
+      <button
+        aria-label="sign in"
+        class="submitBtn"
+        type="submit"
+      >
+        Sign in
+      </button>
+    </form>
+  </section>
+</div>
+`;

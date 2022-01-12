@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { NoteProvider } from '../../context/NoteCtx';
 import NoteList from './NoteList';
 
